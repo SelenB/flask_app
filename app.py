@@ -9,10 +9,10 @@ def index():
     return render_template('index.html')
     
 
-@app.route('/')
+@app.route('/welcome')
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/')
+@app.route('/database')
 def database():
     return render_template('database.html')
