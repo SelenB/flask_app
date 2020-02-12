@@ -13,6 +13,15 @@ body {
     font-family: 'Times New Roman', Times, Serif;
   }
   
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  a:hover{
+    color: lightskyblue;
+    cursor: pointer;
+  }
   
   
   
