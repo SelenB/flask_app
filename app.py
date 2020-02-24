@@ -18,13 +18,13 @@ def welcome():
 def database():
     return render_template('database.html')
 
-@app.route('/select_singer')
-def select_singer():
-    result = db.execute("SELECT * FROM artists WHERE artist_name = 'Robyn'")
-    for r in result:
-        print(r)
+#@app.route('/select_singer')
+#def select_singer():
+#    result = db.execute("SELECT * FROM artists WHERE artist_name = 'Robyn'")
+#    for r in result:
+#        print(r)
 
-return redirect(url_for('database'))
+#return redirect(url_for('database'))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
