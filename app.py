@@ -20,8 +20,7 @@ def database():
 
 @app.route('/select_singer')
 def select_singer():
-    artistname = request.args.get("Singer")
-    result = db.execute("SELECT * FROM artists WHERE artist_name = artistname")
+    result = db.execute("SELECT * FROM artists WHERE artist_name = 'Robyn'")
     for r in result:
         print(r)
 
