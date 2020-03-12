@@ -6,13 +6,15 @@ from sqlalchemy.orm import sessionmaker
 
 db_string =  "postgres://vcm:example@vcm-13360:5432/production"
 db = create_engine(db_string)
+db_session = scoped_session(sessionmaker(autocommit=False,
+                                         autoflush=False,
+                                         bind=db))
+Base = declarative_base()
+Base.query = db_session.query_property()
 
-
-
-# for the code above once we have created our
-# hardcoded database we can ran different commands 
-# on it like the code below.
-
-#result = db.execute("SELECT * FROM artists WHERE artist_name = 'Justin Beiber'")
-#for r in result:
-#    print(r)
+def init_db():
+    # import all modules here that might define models so that
+    # they will be registered properly on the metadata.  Otherwise
+    # you will have to import them first before calling init_db()
+    import models
+    Base.metadata.create_all(bind=db)
