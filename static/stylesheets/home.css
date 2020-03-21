@@ -5,21 +5,22 @@ body {
   position: relative;
 }
 
-h1 {
+.welcome{
   mix-blend-mode: exclusion;
   color: white;
   text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
   
 }
 .services{
 background-color: white;
-  width:3 00px
-  border: 100% solid gray;
-  padding: 5px;
   margin: .05%;
   column-count: 3;
   column-rule: 1px solid lightblue;
+  position:bottom;
 }
+
 h2{
   text-align:center;
   
@@ -42,14 +43,11 @@ a:hover {
   color: lightskyblue;
   cursor: pointer;
 }
-div{
+.index{
   background-color: white;
-  width:3 00px
-  border: 100% solid gray;
-  padding: 5px;
   margin: .05%;
   column-count: 3;
-  
+  padding-bottom: 0;
 }
 
   
