@@ -23,5 +23,8 @@ from forms to page templates.
 
 The next step is to add the form to an HTML template so that it can be rendered on a web page.
 
+useful pip commands.
+1. `pip3 list`  to show a list of packages installed. (this is specific to linus os might be different for mac os or windows os.
+2.
 
 
