@@ -21,7 +21,7 @@ class Artists(db.Model):
 
 class Listeners(db.Model):
     __tablename__ = 'listeners'
-    id = db.column('id', db.String(200), primary_key= True)
+    id = db.column('id', db.String(200), primary_key=True)
     display_name = db.column('display_name', db.String(200), nullable= False)
     followers = db.column('followers',db.Integer(), nullable = False)
     image_url = db.Column('image_url',db.String(400), unique= False, nullable = False)
