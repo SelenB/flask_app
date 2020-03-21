@@ -38,7 +38,7 @@ class Tracks(db.Model):
     review_url = db.Column('review_url',db.String(400), unique= False, nullable = False)
 
 class Albums(db.Model):
-    __tablename__ = 'listeners'
+    __tablename__ = 'albums'
     id = db.Column('id', db.String(200), primary_key=True)
     name = db.Column('name', db.String(200), nullable= False)
     album_type = db.Column('album_type', db.String(200), nullable = False)
