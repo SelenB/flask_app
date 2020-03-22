@@ -5,7 +5,8 @@ from app import db
 #albums = orm.relationshio('Albums')-it is unclear whether 
     #this is needed because as defined on the 
     #er diagram, there is no artist associated with 
-    #album.
+    #album. i think each one to many relationship might need a foreign key id. 
+    #double check that they do.
 class Artists(db.Model):
     __tablename__ = 'artists'
     id = db.Column('id', db.String(200), primary_key=True)
@@ -18,6 +19,8 @@ class Artists(db.Model):
     topartists = orm.relationship('Topartists')
     created = orm.relationship('Createdby')
     tracksonalbum=orm.relationship('Albumcontainstrack')
+    def __repr__(self):
+       return '<Artist: {}>'.format(self.artist_name) 
 
 class Listeners(db.Model):
     __tablename__ = 'listeners'
@@ -26,7 +29,7 @@ class Listeners(db.Model):
     followers = db.Column('followers',db.Integer(), nullable = False)
     image_url = db.Column('image_url',db.String(400), unique= False, nullable = False)
     #not sure about this to specify one to many relationship between classes.
-    topartists = orm.relationship('Topartists')
+    topartists = orm.relationship('Topartists') #from blog miguelgrinberg
     toptracks = orm.relationship('Toptracks')
 
 
@@ -72,4 +75,7 @@ class Albumcontainstrack(db.Model):
     album_id = db.Column('album_id', db.String(200), db.ForeignKey('albums.id'), primary_key = True)
 
 
-    
+#can also define 
+#def __repr__(self):
+#       return '<User {}>'.format(self.username)  
+#which tells python how to print objects of this class.

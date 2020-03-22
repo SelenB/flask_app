@@ -3,16 +3,7 @@ from wtforms import StringField, BooleanField, IntegerField, SelectField, Submit
 from wtforms.validators import DataRequired
 from wtforms import PasswordField, BooleanField, SubmitField
 
-# create a dropdown list asking user what table they want to see
-# either top artists/top tracks/top albums. 
-#based on selection, open a new page that shows the table with
-#some data visualizations/world.
 
-#databasehtml is the page we will be using.
-
-#we also need to define st
-
-#CHELLLLOOOOOO
 
 
 # found this class that asks users to login. might be a good starting point for
@@ -22,6 +13,13 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
-    
+
+class artistsform:
+    @staticmethod
+    def form(dropdown_list):
+        class F(FlaskForm):
+            artist_sel = SelectField('Artist', choices= [(x,x) for x in dropdown_list])
+            submit = SubmitField('Submit')
+        return F()
 
 
