@@ -1,54 +1,97 @@
 body {
-  font-family: "Times New Roman", Times, Serif;
-  background-image: url("https://i.imgur.com/odcTwIm.jpg");
+  margin: 0;
+  font-family: serif;
+}
+
+.hero-image {
+  background-image: url("/static/img/webimage.jpg");
+  background-color: #cccccc;
+  height: 400px;;
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-div.welcome{
-  mix-blend-mode: exclusion;
-  color: white;
+.hero-text {
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  
-}
-div.services{
-background-color: white;
-  margin: .05%;
-  column-count: 3;
-  column-rule: 1px solid lightblue;
-  position:bottom;
-}
-
-h2{
-  text-align:center;
-  
-  column-span: all;
-}
-p {
-  
-  font-family: "Times New Roman", Times, Serif;
-}
-li{
-  list-style-type:none;
-}
-
-a {
-  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: black;
+  font-size: 30px;
 }
 
-a:hover {
-  color: lightskyblue;
-  cursor: pointer;
+.welcome{
+background-color: white;
+  margin: 1%;
+  text-align: center;
+   
+  border-style: solid;
+  border-color: pink;
+  letter-spacing: 1px;
+
 }
-div.index{
-  background-color: white;
-  margin: .05%;
-  column-count: 4;
-  padding-bottom: 0;
-}
+.services{
+ background-color: white;
+ margin: 2%;
+ text-align: center;
+ letter-spacing: 1px;
 
   
+ }
+
+.columna{
+  float: left;
+  width: 28%;
+  height: 200px; 
+  padding: 1px 30px;
+  letter-spacing: 1px;
   
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.index{
+  vertical-align: bottom;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 10px;
+    border-color: white;
+    font-family: serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 1%;
+}
+.column {
+  float: left;
+  width: 25%;
+}
+.index:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+  
+
+@media screen and (max-width: 1000px) {
+  .columna{
+    width: 100%;
+  }
+}
