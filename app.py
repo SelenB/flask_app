@@ -35,7 +35,7 @@ def database():
         dropdown_list.append(artist[0])
     form = forms.artistsform.form(dropdown_list)
     if form.validate_on_submit():
-        return redirect('/artistpage/') # not sure if this is right
+        return render_template('artistpage.html') # not sure if this is right
     return render_template('database.html', dropdown_list=dropdown_list, form=form)
 
 
